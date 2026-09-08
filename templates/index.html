@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Enquiry</title>
+
+  <!-- Poppins font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Our own stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <aside class="sidebar">
+
+      <!-- CE logo + college name -->
+      <div class="brand">
+        <div class="logo">CE</div>
+        <div>
+          <div class="brand-name">College Enquiry</div>
+          <div class="brand-tagline">Admissions help desk chatbot</div>
+        </div>
+      </div>
+
+      <!-- Simple college illustration (teal building with a clock) -->
+      <div class="illustration">
+        <svg width="180" height="155" viewBox="0 0 180 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="35" y="45" width="110" height="90" rx="8" fill="#F0FBFD" stroke="#42A9B8" stroke-width="2"/>
+          <polygon points="90,10 45,45 135,45" fill="#42A9B8"/>
+          <rect x="75" y="75" width="30" height="60" rx="15" fill="#42A9B8"/>
+          <circle cx="90" cy="68" r="18" fill="white" stroke="#42A9B8" stroke-width="2.5"/>
+          <line x1="90" y1="68" x2="90" y2="58" stroke="#42A9B8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="90" y1="68" x2="98" y2="72" stroke="#42A9B8" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="50" y="55" width="14" height="14" rx="3" fill="white" stroke="#42A9B8" stroke-width="1.5"/>
+          <rect x="116" y="55" width="14" height="14" rx="3" fill="white" stroke="#42A9B8" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <!-- Small decorative horizontal bar -->
+      <div class="decorative-line"></div>
+
+      <!-- Contact / help desk information -->
+      <div class="contact">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Help desk</div>
+            <div class="contact-value">+91 98765 43210</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">admissions&#64;college.edu</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Office hours</div>
+            <div class="contact-value">9:00 AM to 5:00 PM</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+      <!-- Header -->
+      <div class="topbar">
+        <div>
+          <h1>Ask about admissions</h1>
+          <p>Type a question or choose a topic below</p>
+        </div>
+        <div class="online">
+          <span class="dot"></span>
+          Online
+        </div>
+      </div>
+
+      <!-- Topic navigation (links to Flask routes) -->
+      <nav class="topic-nav">
+        <a href="/category/Admissions">Admissions</a>
+        <a href="/category/Courses">Courses</a>
+        <a href="/category/Fees">Fees</a>
+        <a href="/category/Scholarships">Scholarships</a>
+        <a href="/category/Hostel">Hostel</a>
+        <a href="/category/Placements">Placements</a>
+        <a href="/category/Contact">Contact</a>
+      </nav>
+
+      <!-- Chat / content area -->
+      <section class="chat-area">
+
+        <!-- Welcome message -->
+        <div class="welcome">
+          <div class="bot-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 9L12 4 2 9l10 5 10-5z"/>
+              <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>
+              <path d="M22 9v6"/>
+            </svg>
+          </div>
+          <p>Hello! I am your college enquiry assistant. What would you like to know today?</p>
+        </div>
+
+        <!-- Quick question options -->
+        <div class="chips">
+          <a class="chip" href="/category/Admissions">admission process</a>
+          <a class="chip" href="/category/Courses">courses offered</a>
+          <a class="chip" href="/category/Fees">fee structure</a>
+        </div>
+
+        <!-- Answer block: only shown after the user clicks a topic or asks a question.
+             The actual answer markup lives in result.html -->
+        {% if answer_content %}
+          {% include "result.html" %}
+        {% endif %}
+
+      </section>
+
+      <!-- Question form (submits to Flask /ask route) -->
+      <form class="ask-form" method="post" action="/ask">
+        <input type="text" name="question" placeholder="Type your question..." autocomplete="off">
+        <button type="submit" class="send-btn" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

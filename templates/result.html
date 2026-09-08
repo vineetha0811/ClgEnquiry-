@@ -1,0 +1,41 @@
+<!--
+  result.html
+  ===========
+  This is the ANSWER block. It is included (loaded) inside index.html
+  only when an answer is available.
+
+  If the user typed a question, show it as a small "user" message first,
+  and then show the assistant's answer below it.
+-->
+
+<div class="response">
+
+  {% if user_question %}
+    <!-- The question typed by the user -->
+    <div class="user-msg">
+      <div class="msg-avatar user">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div class="user-bubble">{{ user_question }}</div>
+    </div>
+  {% endif %}
+
+  <!-- The assistant's answer -->
+  <div class="bot-msg">
+    <div class="msg-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 9L12 4 2 9l10 5 10-5z"/>
+        <path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/>
+        <path d="M22 9v6"/>
+      </svg>
+    </div>
+    <div class="bot-bubble">
+      <div class="answer-title">{{ answer_title }}</div>
+      <div class="answer-content">{{ answer_content }}</div>
+    </div>
+  </div>
+
+</div>
